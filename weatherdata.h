@@ -16,6 +16,7 @@ public:
     virtual void removeObserver(Observer *o);
     virtual void notifyObserver();
     void setMeasurementsChanged(float t, float h, float p);
+    void measurementsChanged();
 };
 
 #endif // WEATHERDATA_H
