@@ -21,7 +21,8 @@ SOURCES += \
     subject.cpp \
     currentconditionsdisplay.cpp \
     weatherdata.cpp \
-    statisticsdisplay.cpp
+    statisticsdisplay.cpp \
+    forecastdisplay.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -34,4 +35,5 @@ HEADERS += \
     subject.h \
     currentconditionsdisplay.h \
     weatherdata.h \
-    statisticsdisplay.h
+    statisticsdisplay.h \
+    forecastdisplay.h
