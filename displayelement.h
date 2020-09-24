@@ -1,9 +1,10 @@
 #ifndef DISPLAYELEMENT_H
 #define DISPLAYELEMENT_H
 
+#include <QWidget>
+#include <QLabel>
 
-class DisplayElement
-{
+class DisplayElement {
 public:
     DisplayElement();
     virtual void display() = 0;

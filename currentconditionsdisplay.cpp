@@ -4,6 +4,20 @@ CurrentConditionsDisplay::CurrentConditionsDisplay(Subject *weatherData)
 {
     this->weatherData = weatherData;
     weatherData->registerObserver(this);
+
+    this->setGeometry(100, 100, 200, 200);
+    this->setWindowTitle("Текущие значения");
+
+    temp = new QLabel(this);
+    temp->setText("Температура: НЕТ ДАННЫХ");
+    temp->setGeometry(10,10, 190, 20);
+    temp->setParent(this);
+
+    hum = new QLabel(this);
+    hum->setText("Влажность: НЕТ ДАННЫХ");
+    hum->setGeometry(10,30, 190, 20);
+    hum->setParent(this);
+
 }
 
 void CurrentConditionsDisplay::update(float t, float h, float p) {
@@ -14,8 +28,10 @@ void CurrentConditionsDisplay::update(float t, float h, float p) {
 }
 
 void CurrentConditionsDisplay::display() {
-    cout << "Current conditions:" << endl << "\t"
+    temp->setText("Температура: " + QString::number(temperature));
+    hum->setText("Влажность: " + QString::number(humidity));
+    /*cout << "Current conditions:" << endl << "\t"
          << temperature << "°C" << endl
          << "\t%" << humidity << endl
-         << "\t" << pressure << " mm Hg" << endl;
+         << "\t" << pressure << " mm Hg" << endl;*/
 }
