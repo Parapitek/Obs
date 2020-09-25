@@ -16,12 +16,12 @@ void ForecastDisplay::update(float t, float h, float p) {
 void ForecastDisplay::display() {
     cout << "Forecast: ";
     if (currentPressure > lastPressure) {
-        cout << "Погода скоро улучшится!" << endl;
+        cout << "Improving weather on the way!" << endl;
     }
     else if (currentPressure == lastPressure) {
-        cout << "Без изменений" << endl;
+        cout << "More of the same" << endl;
     }
     else if (currentPressure < lastPressure) {
-        cout << "Скоро будет дождь" << endl;
+        cout << "Watch out for cooler, rainy weather" << endl;
     }
 }

@@ -1,8 +1,16 @@
 #include "weatherdata.h"
 
-WeatherData::WeatherData()
-{
+WeatherData::WeatherData() : Subject(), QObject() {
     observers = new QList<Observer*>();
+
+    timer = new QTimer();
+    timer->setInterval(3000);
+    connect(timer, SIGNAL(timeout()), this, SLOT(onTimer()));
+    timer->start();
+}
+
+WeatherData::~WeatherData() {
+    delete timer;
 }
 
 void WeatherData::registerObserver(Observer *o) {
@@ -32,4 +40,11 @@ void WeatherData::setMeasurementsChanged(float t, float h, float p) {
 
 void WeatherData::measurementsChanged() {
     notifyObserver();
+}
+
+void WeatherData::onTimer() {
+    int t = (qrand() % 70) - 35;
+    int h = qrand() % 100;
+    int p = (qrand() % 100) + 700;
+    setMeasurementsChanged(t, h, p);
 }

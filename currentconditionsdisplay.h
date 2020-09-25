@@ -5,7 +5,6 @@
 #include "displayelement.h"
 #include "subject.h"
 
-
 class CurrentConditionsDisplay : public Observer, public DisplayElement, public QWidget {
 private:
     float temperature;
@@ -15,6 +14,9 @@ private:
     QLabel *temp;
     QLabel *hum;
     QLabel *press;
+    QLCDNumber *tempLCD;
+    QLCDNumber *humLCD;
+    QLCDNumber *pressLCD;
 public:
     CurrentConditionsDisplay(Subject *weatherData);
     virtual void update(float t, float h, float p);

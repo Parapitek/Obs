@@ -10,12 +10,9 @@ int main(int argc, char *argv[])
 
     WeatherData *weatherData = new WeatherData();
 
+    CurrentConditionsDisplay *current = new CurrentConditionsDisplay(weatherData);
     StatisticsDisplay *stat = new StatisticsDisplay(weatherData);
     ForecastDisplay *forecast = new ForecastDisplay(weatherData);
-
-    weatherData->setMeasurementsChanged(80, 65, 30.4);
-    weatherData->setMeasurementsChanged(85, 61, 28.2);
-    weatherData->setMeasurementsChanged(86, 59, 27.1);
 
     return a.exec();
 }

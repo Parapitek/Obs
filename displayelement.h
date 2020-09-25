@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QLabel>
+#include <QLCDNumber>
 
 class DisplayElement {
 public:
